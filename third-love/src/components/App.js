@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Carousel from './carousel/carousel';
+import Description from './description';
 class App extends Component {
   componentDidMount() {
     this.props.fetchInfo();
@@ -14,6 +15,7 @@ class App extends Component {
         <div> (PRICE) $68</div>
         {console.log(this.props)}
         <Carousel></Carousel>
+        <Description></Description>
       </div>
     )
   }

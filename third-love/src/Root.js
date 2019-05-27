@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reducer from './reducers';
 import async from './middlewares/async';
-import thunk from 'redux-thunk';
 
 // This approach do nothing special to the code, but to testing, because the provider is easier to mock.
 

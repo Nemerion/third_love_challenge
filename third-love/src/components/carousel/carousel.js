@@ -4,7 +4,11 @@ import './styles/carousel_style.scss';
 
 import ImageGallery from 'react-image-gallery';
 
+// Used ImageGallery component to save work and modularize the proyect
+// For more information, go to the creator repo https://github.com/xiaolin/react-image-gallery 
 class Carousel extends Component {
+
+  // Create an array with the images from the backend configured in order to use the ImageGalllery component properly.
   configureImages() {
     var arr = [];
     if (!this.props.images) return []; //to avoid unsigned array errors
