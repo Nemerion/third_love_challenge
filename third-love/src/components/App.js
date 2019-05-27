@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-
+import Carousel from './carousel/carousel';
 class App extends Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchInfo();
   }
 
   render() {
     return (
       <div>
-        <h3> (MOCK) Classic Perfect Coverage Bra </h3>
+        <h3> {this.props.info.title} </h3>
         <div> (PRICE) $68</div>
         {console.log(this.props)}
+        <Carousel></Carousel>
       </div>
     )
   }
