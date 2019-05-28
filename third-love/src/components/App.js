@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Carousel from './carousel/carousel';
-import Description from './description';
+import Description from './descriptions/description';
+import Customizations from './customizations/customizations';
+import { Container, Row, Col } from 'reactstrap';
+import './App_style.scss';
+
 class App extends Component {
   componentDidMount() {
     this.props.fetchInfo();
@@ -10,13 +14,30 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <h3> {this.props.info.title} </h3>
-        <div> (PRICE) $68</div>
+      <Container fluid={true}>
+        <Row>
+          <Col xs="12">
+            <h3 className="title_name"> {this.props.info.title} </h3>
+          </Col>
+          <Col xs="12">
+            <p className="title_price"> $68</p>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs="auto" className="carousel-pad">
+            <Carousel></Carousel>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Customizations></Customizations>
+          </Col>
+        </Row>
+        <Row>
+          <Description></Description>
+        </Row>
         {console.log(this.props)}
-        <Carousel></Carousel>
-        <Description></Description>
-      </div>
+      </Container>
     )
   }
 }

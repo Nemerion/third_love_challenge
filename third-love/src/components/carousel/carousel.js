@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './styles/carousel_style.scss';
+import './carousel_style.scss';
 
 import ImageGallery from 'react-image-gallery';
 
@@ -30,9 +30,8 @@ class Carousel extends Component {
     const images = this.configureImages();
 
     return (
-      <ImageGallery items={images}
-        disableSwipe={true}
-        useTranslate3D={false}
+      <ImageGallery items={images} showThumbnails={false} showBullets={true}
+        disableSwipe={false}
         disableArrowKeys={true}
         showNav={false}
         showPlayButton={false}
