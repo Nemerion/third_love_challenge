@@ -17,10 +17,10 @@ class App extends Component {
       <Container fluid={true}>
         <Row>
           <Col xs="12">
-            <h3 className="title_name"> {this.props.info.title} </h3>
+            <h3 className="title-name"> {this.props.info.title} </h3>
           </Col>
           <Col xs="12">
-            <p className="title_price"> $68</p>
+            <p className="title-price"> $68</p>
           </Col>
         </Row>
         <Row>
@@ -29,7 +29,7 @@ class App extends Component {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col xs="12">
             <Customizations></Customizations>
           </Col>
         </Row>
