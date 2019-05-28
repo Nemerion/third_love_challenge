@@ -14,10 +14,10 @@ class Carousel extends Component {
     if (!this.props.images) return []; //to avoid unsigned array errors
     for(let i = 0; i < this.props.images.length; i++) {
       let auxObj = {};
-      if(this.props.images[i].src100 && this.props.images[i].src600) {
+      if(this.props.images[i].src1000 && this.props.images[i].src600) {
         auxObj = {
-          original: 'https://' + this.props.images[i].src600,
-          thumbnail: 'https://' + this.props.images[i].src100
+          original: 'https://' + this.props.images[i].src1000,
+          thumbnail: 'https://' + this.props.images[i].src600
         }
       }
       arr.push(auxObj);
