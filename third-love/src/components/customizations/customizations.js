@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Row, Col, Form, FormGroup, Label, Button, Input } from 'reactstrap';
+import Swatches from '../swatches/swatches';
 import './customization_style.scss';
 
 // Concerning to the dropdowns, i thougt that a component should be made to save code and promote modularization, but i will skip that in order to faster
 // Did a Form, but i just decide to keep it simple and no
 class Customizations extends Component {
   onSubmit = (e) => {
-    e.preventDefult();
+    e.stopPropagation();
     alert('it works!');
   }
   
@@ -17,10 +18,7 @@ class Customizations extends Component {
         <Row>
           <Col xs="12">
             <p className="color-font">COLOR: NAKED</p>
-            <FormGroup check>
-              <Label check></Label>
-              <Input type="radio" name="selColor"/>
-            </FormGroup>
+            <Swatches></Swatches>
             <p className="stock-font">STOCK: 20</p>
           </Col>
           <Col xs>

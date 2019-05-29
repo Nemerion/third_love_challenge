@@ -8,7 +8,7 @@ import ImageGallery from 'react-image-gallery';
 // For more information, go to the creator repo https://github.com/xiaolin/react-image-gallery 
 class Carousel extends Component {
 
-  // Create an array with the images from the backend configured in order to use the ImageGalllery component properly.
+  // Creates and returns an array with the images from the backend configured in order to use the ImageGalllery component properly.
   configureImages() {
     var arr = [];
     if (!this.props.images) return []; //to avoid unsigned array errors
@@ -22,7 +22,6 @@ class Carousel extends Component {
       }
       arr.push(auxObj);
     }
-    console.log(arr);
     return arr;
   }
 
