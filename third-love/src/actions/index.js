@@ -1,4 +1,4 @@
-import { FETCH_INFO } from '../constants';
+import { FETCH_INFO, SAVE_SWATCH_DATA } from '../constants';
 import axios from 'axios';
 
 export function fetchInfo() {
@@ -8,4 +8,11 @@ export function fetchInfo() {
     type: FETCH_INFO,
     payload: response
   };
+}
+
+export function saveSwatchData(data) {
+  return {
+    type: SAVE_SWATCH_DATA,
+    payload: data
+  }
 }

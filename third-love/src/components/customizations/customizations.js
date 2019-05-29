@@ -43,7 +43,7 @@ class Customizations extends Component {
 }
 
 const mapStateToProps = state => {
-  return { info: state.info };
+  return { swatch: state.swatch };
 }
 
 export default connect(mapStateToProps)(Customizations);

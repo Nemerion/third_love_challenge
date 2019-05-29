@@ -35,30 +35,32 @@ class Swatches extends Component {
       }
       if(this.state.inventoryArray.length === 0) { // Write only 1 time
         this.setState( { inventoryArray: arr });
-        console.log(arr);
+        //console.log(this.state.inventoryArray);
       }
     };
   }
 
-  handleOptionChange = changeEvent => {
+  onChange = changeEvent => {
     this.setState({
       selectedOption: changeEvent.target.name
     });
+    this.props.saveSwatchData(this.state.inventoryArray[changeEvent.target.value]);
+    console.log(this.state.inventoryArray[changeEvent.target.value]);
   }
 
   renderSwatches() {
     return this.state.inventoryArray.map((data, i) => {
       return (
         <Col xs key={i}>
-          <FormGroup check >
+          <FormGroup check>
             <Label check>
               <Input
                 className="swatch"
                 type="radio"
                 name={"product-number-" + i}
-                value={data}
+                value={i}
                 checked={this.state.selectedOption === "product-number-" + i}
-                onChange={this.handleOptionChange /*&& this.props.saveSwatchData*/}
+                onChange={this.onChange}
               />
             </Label>
           </FormGroup>
