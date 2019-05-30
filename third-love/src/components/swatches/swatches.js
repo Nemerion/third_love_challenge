@@ -11,13 +11,13 @@ class Swatches extends Component {
   }
 
   componentDidUpdate() {
-    this.organizeArray();
+    this.groupByColorName();
   }
 
   // This creates a new array of arrays using the 'variants' field, but taking
   // only those objects which have an 'inventory_quantity' superior or 
-  // equal than 10 and groups it by 'option1' fields.
-  organizeArray() {
+  // equal than 10 and groups it by 'option1 color name' fields.
+  groupByColorName() {
     var arr = [[], [], [], [], []], // 5 groups, 1 by each 'option1' value
       {variants} = this.props.info;
 
@@ -40,12 +40,33 @@ class Swatches extends Component {
     };
   }
 
+  // This function configures the given array into an object squashing
+  // the 'inventory_quantity' numbers, 'price' values and 'option1' colors.
+  // The 'option2' fields are grouped into a single array for better handling
+  squashSelectedArr(arr) {
+    var newArr = {};
+
+    newArr.color = arr[0].option1;
+    newArr.price = arr[0].price;
+    // This for sums the quantity of available products, but it's not exactly accurate by product.
+    // It also creates an array with all the sizes.  
+    newArr.stock = arr[0].inventory_quantity; // Just to initialize
+    newArr.sizes = [];
+    for(var i = 0; i < arr.length; i++) {
+      newArr.sizes.push(arr[i].option2);
+      newArr.stock = (newArr.stock <= arr[i].inventory_quantity) ? newArr.stock : arr[i].inventory_quantity;
+    }
+    return newArr;
+  }
+
   onChange = changeEvent => {
     this.setState({
       selectedOption: changeEvent.target.name
     });
-    this.props.saveSwatchData(this.state.inventoryArray[changeEvent.target.value]);
-    console.log(this.state.inventoryArray[changeEvent.target.value]);
+    let configuredArr = this.squashSelectedArr(this.state.inventoryArray[changeEvent.target.value]);
+    this.props.saveSwatchData(configuredArr);
+    //console.log(this.state.inventoryArray[changeEvent.target.value]);
+    console.log(configuredArr);
   }
 
   renderSwatches() {
@@ -71,11 +92,9 @@ class Swatches extends Component {
 
   render() {
     return (
-      <FormGroup tag="fieldset">
-        <Row>
-          {this.renderSwatches()}
-        </Row>
-      </FormGroup>
+      <Row>
+        {this.renderSwatches()}
+      </Row>
     );
   }
 }

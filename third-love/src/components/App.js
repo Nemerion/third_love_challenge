@@ -36,14 +36,13 @@ class App extends Component {
         <Row>
           <Description></Description>
         </Row>
-        {console.log(this.props)}
       </Container>
     )
   }
 }
 
 const mapStateToProps = state => {
-  return { info: state.info };
+  return { info: state.info, swatch: state.swatch };
 }
 
 export default connect(mapStateToProps, actions)(App);
