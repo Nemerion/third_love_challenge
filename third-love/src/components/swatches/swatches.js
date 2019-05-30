@@ -69,7 +69,7 @@ class Swatches extends Component {
   renderSwatches() {
     return this.state.inventoryArray.map((data, i) => {
       return (
-        <Col xs key={i} className={["col-number-" + i, "swatch-col"].join(' ')}>
+        <Col xs sm key={i} className={["col-number-" + i, "swatch-col"].join(' ')}>
           <FormGroup check>
             <Label check>
               <Input

@@ -13,11 +13,11 @@ class Description extends Component {
     let htmlString = htmlDoc.getElementsByTagName("body")[0].innerHTML;
 
     return (
-      <Col className="details-container-col">
+      <div className="details-container">
         <h3 className="details">DETAILS</h3>
-        <hr />
-        <div className="text"> { ReactHtmlParser(htmlString)} </div>
-      </Col>
+        <hr/>
+        <div className="text">{ ReactHtmlParser(htmlString)}</div>
+      </div>
     );
   }
 }

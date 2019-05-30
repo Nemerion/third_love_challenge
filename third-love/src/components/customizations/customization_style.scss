@@ -12,6 +12,8 @@
     background-color: #000000;
     border-color: #000000;
     height: 50px;
+    margin-top: 19px;
+    margin-bottom: 39px;
   }
 
   .band-size-label,
@@ -34,6 +36,7 @@
     background-color: #ffffff;
     border-radius: 0;
     height: 44px;
+    width: 160px;
 
     &:focus {
       box-shadow: none;
@@ -44,4 +47,35 @@
     margin-top: 15px;
     margin-bottom: 25px;  
   }
+
+  .dropdown-wrapper {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+
+  .band-size-form {
+    padding-left: 15px;
+    padding-right: 17px;
+    margin-bottom: 0;
+  }
+
+  .cup-size-form {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 374px) {
+    .band-size-input,
+    .cup-size-input {
+      width: 130px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .band-size-input,
+    .cup-size-input {
+      width: 170px;
+    }
+  }
 }
+

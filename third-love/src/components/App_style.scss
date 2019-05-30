@@ -1,35 +1,58 @@
-.title-name {
-  //width: 335px;
-  //height: 24px;
-  font-family: AbhayaLibre;
-  font-size: 22px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.09;
-  letter-spacing: normal;
-  text-align: center;
-  color: #222222;
-  padding-top: 20px;
+.container-fluid {
+  // Override the standard 15px padding from bootstrap Col
+  .pad-left-right {
+    padding: 0 20px;
+  }
+  
+  .title-name {
+    //width: 335px;
+    //height: 24px;
+    font-family: AbhayaLibre;
+    font-size: 22px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #222222;
+    padding-top: 20px;
+  }
+  
+  .title-price {
+    //width: 37px;
+    //height: 20px;
+    font-family: OpenSans;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #666666;
+    margin: 0;
+  }
+  
+  .carousel-container {
+    padding: 0 !important;
+    margin-bottom: 25px;
+    margin-top: 20px;
+  }
+  
+  .details-col {
+    padding-bottom: 18px;
+  }
+
+  @media screen and (min-width: 768px) {
+    // Override the standard 15px padding from bootstrap Col
+    .pad-left-right {
+      padding: 0 30px;
+    }
+
+    .title-name {
+      font-size: 24px;
+    }
+  }
 }
 
-.title-price {
-  //width: 37px;
-  //height: 20px;
-  font-family: OpenSans;
-  font-size: 15px;
-  font-weight: 600;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 1px;
-  text-align: center;
-  color: #666666;
-  margin: 0;
-}
 
-.carousel-container {
-  padding: 0 !important;
-  margin-bottom: 25px;
-  margin-top: 20px;
-}

@@ -69,29 +69,25 @@ class Customizations extends Component {
     return (
       <Form className="form" onSubmit={this.onSubmit}>
         <Row>
-          <Col xs="12">
+          <Col xs="12" sm="12">
             <p className="color-font">COLOR: {this.props.swatch.color}</p>
             <FormGroup tag="fieldset" className="swatch-container">
               <Swatches></Swatches>
             </FormGroup>
             <p className="stock-font">STOCK: {this.props.swatch.stock}</p>
           </Col>
-          <Col xs>
-            <FormGroup>
-              <Label className="band-size-label" for="bandSize">BAND SIZE</Label>
-              <Input className="band-size-input" type="select" name="band" id="bandSize">
-                <PopulateOptions arrToPopulate={this.state.band_size}/>
-              </Input>
-            </FormGroup>
-          </Col>
-          <Col xs>
-            <FormGroup>
-              <Label className="cup-size-label" for="cupSize">CUP SIZE</Label>
-              <Input className="cup-size-input" type="select" name="cup" id="cupSize">
-                <PopulateOptions arrToPopulate={this.state.cup_size}/>
-              </Input>
-            </FormGroup>
-          </Col>
+          <FormGroup className="band-size-form">
+            <Label className="band-size-label" for="bandSize">BAND SIZE</Label>
+            <Input className="band-size-input" type="select" name="band" id="bandSize">
+              <PopulateOptions arrToPopulate={this.state.band_size}/>
+            </Input>
+          </FormGroup>
+          <FormGroup className="cup-size-form">
+            <Label className="cup-size-label" for="cupSize">CUP SIZE</Label>
+            <Input className="cup-size-input" type="select" name="cup" id="cupSize">
+              <PopulateOptions arrToPopulate={this.state.cup_size}/>
+            </Input>
+          </FormGroup>
         </Row>
         <Button size="lg" block className="add-button">Add to Bag</Button>
       </Form>
