@@ -24,7 +24,7 @@ class App extends Component {
           </Col>
         </Row>
         <Row>
-          <Col xs="auto" className="carousel-pad">
+          <Col xs="auto" className="carousel-container">
             <Carousel></Carousel>
           </Col>
         </Row>
