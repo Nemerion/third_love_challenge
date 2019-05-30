@@ -20,7 +20,7 @@ class App extends Component {
             <h3 className="title-name"> {this.props.info.title} </h3>
           </Col>
           <Col xs="12">
-            <p className="title-price"> $68</p>
+            <p className="title-price"> ${this.props.swatch.price}</p>
           </Col>
         </Row>
         <Row>

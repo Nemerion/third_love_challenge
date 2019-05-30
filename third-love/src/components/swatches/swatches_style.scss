@@ -1,9 +1,65 @@
-.form-check {
-  margin-bottom: 16px;  
+$colors: (
+  #ffefe5,//rose-white
+  #dab5a1,//clam-shell
+  #d49d89,//rose
+  #6a3a33,//metallic-copper
+  #524346 //emperor
+);
+
+.form-check-label {
+  /* Hide the browser's default radio button */
+  .form-check-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    /* Style the indicator (dot/circle) */
+    &:after {
+       top: 11px;
+      left: 11px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    /* Show the indicator (dot/circle) when checked */
+    input:checked ~ &:after {
+      display: block;
+      background-color: #524346;
+    }
+  }
+
+  @for $i from 0 to 5 {
+    .number-#{$i} {
+      background-color: nth($colors , $i+1);
+    }
+  }
+  /* When the radio button is checked, add a color background */
+  input:checked ~ .checkmark {
+    border: solid 3px #c9c9c9;
+  }
+
 }
 
-label {
-  .swatch {
-    position: relative;
+.row {
+  .swatch-col {
+    margin-left: 25px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 30px;
+    height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+  }
+
+  .col-number-0 {
+    margin-left: 15px;
   }
 }

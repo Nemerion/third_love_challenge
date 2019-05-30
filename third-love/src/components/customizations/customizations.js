@@ -18,7 +18,7 @@ class Customizations extends Component {
   }
   /*+ '-' + <BAND SIZE> + <CUP SIZE> + 'to the cart'*/
   onSubmit(e) {
-    alert('Added a ' /*+ this.props.info.title*/);
+    alert('Added a 24/7™ Classic Perfect Coverage Bra - ' + e.target[6].value + e.target[7].value + ' to the cart');
     e.stopPropagation();
   }
 
@@ -71,7 +71,7 @@ class Customizations extends Component {
         <Row>
           <Col xs="12">
             <p className="color-font">COLOR: {this.props.swatch.color}</p>
-            <FormGroup tag="fieldset">
+            <FormGroup tag="fieldset" className="swatch-container">
               <Swatches></Swatches>
             </FormGroup>
             <p className="stock-font">STOCK: {this.props.swatch.stock}</p>
@@ -100,7 +100,7 @@ class Customizations extends Component {
 }
 
 const mapStateToProps = state => {
-  return { swatch: state.swatch , info: state.info};
+  return { swatch: state.swatch };
 }
 
 export default connect(mapStateToProps)(Customizations);
