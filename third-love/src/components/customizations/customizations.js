@@ -17,8 +17,8 @@ class Customizations extends Component {
     this.sliceSizes();
   }
   /*+ '-' + <BAND SIZE> + <CUP SIZE> + 'to the cart'*/
-  onSubmit(e) {
-    alert('Added a 24/7™ Classic Perfect Coverage Bra - ' + e.target[6].value + e.target[7].value + ' to the cart');
+  onSubmit(e) { // 'Added a 24/7™ Classic Perfect Coverage Bra - '
+    alert('Added a ' + e.target.innerText.split('\n')[0] + ' - ' + e.target[5].value + e.target[6].value + ' to the cart');
     e.stopPropagation();
   }
 
@@ -69,11 +69,15 @@ class Customizations extends Component {
     return (
       <Form className="form" onSubmit={this.onSubmit}>
         <Row>
+          <Col xs="12" sm="12" className="title-price-wrapper">
+            <h3 className="title-name"> {this.props.info.title} </h3>
+            <p className="title-price"> ${this.props.swatch.price}</p>
+          </Col>
           <Col xs="12" sm="12">
             <p className="color-font">COLOR: {this.props.swatch.color}</p>
-            <FormGroup tag="fieldset" className="swatch-container">
+            <div className="swatch-container">
               <Swatches></Swatches>
-            </FormGroup>
+            </div>
             <p className="stock-font">STOCK: {this.props.swatch.stock}</p>
           </Col>
           <FormGroup className="band-size-form">
@@ -96,7 +100,7 @@ class Customizations extends Component {
 }
 
 const mapStateToProps = state => {
-  return { swatch: state.swatch };
+  return { swatch: state.swatch, info: state.info };
 }
 
 export default connect(mapStateToProps)(Customizations);

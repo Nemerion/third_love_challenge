@@ -16,25 +16,17 @@ class App extends Component {
     return (
       <Container fluid={true}>
         <Row>
-          <Col xs="12" sm="12" className="pad-left-right">
+          <Col xs="12" sm="12" className="title-wrapper pad-left-right">
             <h3 className="title-name"> {this.props.info.title} </h3>
-          </Col>
-          <Col xs="12" sm="12" className="pad-left-right">
             <p className="title-price"> ${this.props.swatch.price}</p>
           </Col>
-        </Row>
-        <Row>
-          <Col xs="auto" className="carousel-container pad-left-right">
+          <Col xs="12" sm="12" lg="5 order-1 offset-lg-1" className="carousel-container pad-left-right">
             <Carousel></Carousel>
           </Col>
-        </Row>
-        <Row>
-          <Col xs="12" sm="12" className="pad-left-right">
+          <Col xs="12" sm="12" lg="3 order-3" className="pad-left-right">
             <Customizations></Customizations>
           </Col>
-        </Row>
-        <Row>
-          <Col xs sm className="details-col pad-left-right">
+          <Col xs="12" sm="12" lg="5 order-12 offset-lg-1" className="details-col pad-left-right">
             <Description></Description>
           </Col>
         </Row>

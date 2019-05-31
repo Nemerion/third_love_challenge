@@ -64,6 +64,10 @@
     margin-bottom: 0;
   }
 
+  .title-price-wrapper {
+    display: none;
+  }
+
   @media screen and (max-width: 374px) {
     .band-size-input,
     .cup-size-input {
@@ -71,11 +75,31 @@
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) and (max-width: 979px) {
     .band-size-input,
     .cup-size-input {
       width: 170px;
     }
+
+    .swatch-container {
+      margin-bottom: 34px;
+    }
+  }
+
+  @media (min-width: 980px) {
+    .title-price-wrapper {
+      display: initial;
+      padding-top: 20px;
+      padding-bottom: 30px;
+    }
+
+    .band-size-input,
+    .cup-size-input {
+      width: 177px;
+    }
+  
+    .title-price-form {
+      margin-bottom: 0;
+    }
   }
 }
-

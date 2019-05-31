@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactHtmlParser from 'react-html-parser';
-import { Col } from 'reactstrap';
 import './description_style.scss';
 
 // Use react-html-parser to translate the HTML string from the backend into a React component.
