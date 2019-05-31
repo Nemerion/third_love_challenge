@@ -1,15 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import App from './components/App';
-import Root from './Root';
-import { BrowserRouter, Route } from 'react-router-dom';
+import reducer from './reducers';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import async from './middlewares/async';
 import 'bootstrap/dist/css/bootstrap.css';
 
+const store = createStore(
+  reducer,
+  applyMiddleware(async)
+);
+
 ReactDOM.render(
-  <Root>
-    <BrowserRouter>
-      <Route path="/" component={App} />
-    </BrowserRouter>
-  </Root>,
+  <Provider store={store}>
+    <App/>
+  </Provider>,
   document.querySelector('#root')
 );

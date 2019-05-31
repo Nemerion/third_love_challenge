@@ -65,7 +65,8 @@
   }
 
   .title-price-wrapper {
-    display: none;
+    position: absolute;
+    opacity: 0;
   }
 
   @media screen and (max-width: 374px) {
@@ -88,7 +89,8 @@
 
   @media (min-width: 980px) {
     .title-price-wrapper {
-      display: initial;
+      position: initial;
+      opacity: 1;
       padding-top: 20px;
       padding-bottom: 30px;
     }
