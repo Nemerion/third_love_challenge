@@ -16,8 +16,8 @@ class Customizations extends Component {
   componentDidUpdate() {
     this.sliceSizes();
   }
-  /*+ '-' + <BAND SIZE> + <CUP SIZE> + 'to the cart'*/
-  onSubmit(e) { // 'Added a 24/7™ Classic Perfect Coverage Bra - '
+
+  onSubmit(e) {
     alert('Added a ' + e.target.innerText.split('\n')[0] + ' - ' + e.target[5].value + e.target[6].value + ' to the cart');
     e.stopPropagation();
   }
