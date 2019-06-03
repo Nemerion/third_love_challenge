@@ -4,12 +4,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 The following dependencies were added to the proyect:
   - react, react-dom and react-scripts: JavaScript library for building user interfaces
-	- redux and react-redux: javaScript library for managing application state
-	- axios: REST Promise based HTTP client for the browser
-	- bootstrap, react-bootstrap, reactstrap and node-sass: pre-styled, syntactic sugar and responsive/mobile-first css functionality
-	- core-js, react-app-polyfill: polyfills which adds support for older browsers (E.g. IE11)
-	- react-html-parser: utility for converting HTML strings into React components
-	- react-image-gallery: react component for building image galleries and carousels
+  - redux and react-redux: javaScript library for managing application state
+  - axios: REST Promise based HTTP client for the browser
+  - bootstrap, react-bootstrap, reactstrap and node-sass: pre-styled, syntactic sugar and responsive/mobile-first css functionality
+  - core-js, react-app-polyfill: polyfills which adds support for older browsers (E.g. IE11)
+  - react-html-parser: utility for converting HTML strings into React components
+  - react-image-gallery: react component for building image galleries and carousels
 	
 ## Design pattern
 
@@ -23,7 +23,7 @@ This app tries to follow the 'flux/redux' design pattern, which involves the fol
 The app is saves the state information in one place using redux, improving the communication between components.
 It has two reducers:
   - info: the endpoint with the json info
-	- swatch: an array containing the information of the product after the color is selected
+  - swatch: an array containing the information of the product after the color is selected
 
 ### Exceptions
 
@@ -32,7 +32,7 @@ lives only inside the components that creates them and do not leave, mostly beca
 there), but the main flow does, which is the important part.
 
 ## Folder hierarchy
-
+<pre>
 src
 ├── actions
 │   └── index.js
@@ -42,23 +42,23 @@ src
 │   │   ├── styles (from the component creator )
 │   │   ├── carousel_style.scss
 │   │   └── carousel.js
-│   │ 
+│   │
 │   ├── customizations
 │   │   ├── customization_style.scss
 │   │   └── customizations.js
-│   │ 
+│   │
 │   ├── descriptions
 │   │   ├── description_style.scss
 │   │   └── description.js
-│   │ 
+│   │
 │   ├── populate
 │   │   ├── populate_style.scss
 │   │   └── populate.js
-│   │ 
+│   │
 │   ├── swatches
 │   │   ├── swatches_style.scss
 │   │   └── swatches.js
-│   │ 
+│   │
 │   ├── App.js
 │   └── App_style.scss
 │
@@ -75,6 +75,7 @@ src
 │
 ├── index.js
 └── polyfills.js
+</pre>
 
 ## Available Scripts
 
