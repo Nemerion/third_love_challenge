@@ -54,13 +54,9 @@
     max-width: 100%;
   }
 
-  .band-size-form {
-    padding-left: 15px;
-    padding-right: 17px;
-    margin-bottom: 0;
-  }
-
+  .band-size-form,
   .cup-size-form {
+    padding-left: 15px;
     margin-bottom: 0;
   }
 
@@ -97,7 +93,7 @@
 
     .band-size-input,
     .cup-size-input {
-      width: 177px;
+      max-width: 177px;
     }
   
     .title-price-form {

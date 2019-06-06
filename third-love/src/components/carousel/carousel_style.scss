@@ -31,23 +31,12 @@ $ig-grey: #888888 !default;
   }
 }
 
-@media (min-width: 980px) {
+@media only screen and (min-width: 980px) {
   .image-gallery-slide-wrapper { // Desktop
     &.left {
-      width: 652px;
-      height: 726px;
+      max-width: 652px;
+      max-height: 726px;
+      width: calc(100% - 113px);
     }
   }
-  /*.image-gallery-thumbnail {
-    width: 74px;
-    height: 82px;
-  }*/
-  
-  /*.image-gallery-thumbnail-inner {
-    img {
-      width: 74px;
-      height: 82px;
-    }
-  }*/
 }
-
