@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
+[HERE](https://martinscocco.bitbucket.io/) is a demo with the page running in production mode
+
 ## Dependencies
 
 The following dependencies were added to the proyect:
